@@ -1,0 +1,36 @@
+https://docs.google.com/document/d/150PQCYRMXf6dgNYiTb9akYsyuwZgkEXIiuSwUP5TcWo/edit?pli=1&tab=t.0
+https://docs.google.com/document/d/1Nrp16eKsGAcyNyShkSEnFOwZxC50HqYGFo5cZToD9F8/edit?tab=t.0
+https://github.com/amitaipat-create/May2026
+https://github.com/techleadershub/doctor-ai
+https://learn.techleadershub.net/web/account/affiliate-dashboard
+https://www.trustpilot.com/review/sridharjammalamadaka.com
+PARTITION BY RANGE (TO_DAYS(createdat)) (
+  PARTITION p_old VALUES LESS THAN (TO_DAYS('2026-04-18')),
+  PARTITION p_recent VALUES LESS THAN MAXVALUE
+);
+SET GLOBAL innodb_io_capacity = 1000;
+innodb_io_capacity_max | 2000
+innodb_io_capacity | 200
+wait_timeout  | 28800
+max_connections | 151
+max_connections | 151
+
+The Immediate Fix for "Sleep" Queries
+With 28,800, your server is essentially a "collector" of dead connections. You should lower this to 5 minutes (300 seconds) or even 1 minute (60 seconds). This will force MySQL to clean up those "Sleep" queries automatically.
+ 
+Recomm:
+innodb_buffer_pool_size180GCrucial. You need to keep as much of that 2TB table in RAM as possible to stop the constant disk reading.
+innodb_log_file_size / capacity4GLONGTEXT
+ updates generate a lot of log data. 100MB will cause a crash/stall every few seconds.innodb_flush_log_at_trx_commit2
+This is the "Magic Button" for update speed. It tells MySQL to stop waiting for the disk on every single commit.wait_timeout60 or 300
+Prevents "Sleep" queries from staying open for 8 hours.
+
+The values you see (28,800) mean MySQL is waiting 8 hours before it closes an idle connection
+Set innodb_redo_log_capacity = 2G (This is the most important fix).
+Set innodb_io_capacity = 1000.
+Set innodb_buffer_pool_size = 50G (as you planned).
+[mysqld] innodb_buffer_pool_size = 180G innodb_buffer_pool_instances = 16
+ 
+===[mysqld] # Memory & Cache innodb_buffer_pool_size = 180G innodb_buffer_pool_instances = 16  # Helps with concurrency in large RAM # I/O & Logging innodb_redo_log_capacity = 4G innodb_io_capacity = 2000 innodb_io_capacity_max = 4000 innodb_flush_log_at_trx_commit = 2 # Connection Management wait_timeout = 300 max_connections = 1000     
+
+SELECT      YEAR(createdDate) AS year,     MONTH(createdDate) AS month,     MIN(id) AS MINID,     MAX(id) AS MAXID,     COUNT(*) AS CNT, DATE_FORMAT(MIN(createdDate), '%Y-%m-01') AS month_start_date, LAST_DAY(MIN(createdDate)) AS month_end_date FROM freedompf_theprismac.qp_serialized_loan where createdDate>='2025-01-01' GROUP BY YEAR(createdDate), MONTH(createdDate) ORDER BY year, month;
