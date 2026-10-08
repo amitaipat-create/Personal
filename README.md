@@ -15,3 +15,10 @@ https://docs.google.com/document/d/1JAGx-LFWe_8UpCLLneOMou9eEVvQ15PnaGSHIBk1hdI/
 https://talent-intelligence-agent.vercel.app/
 https://langgraph-fundamentals.futureproofindia.com/lab1a
 https://learn.techleadershub.net/web/community/messages?roomId=69c6cf55388e017712ba579c
+https://chatgpt.com/c/6a947733-f2e0-83e8-8c7f-3946b5b3f2fe
+https://www.kaggle.com/code/sridharjammalamadaka/class-11-langgraph-fundamentals-building-blocks
+https://www.kaggle.com/code/sridharjammalamadaka/class-11-langgraph-resume-screener-bank-onboarding
+https://ascent.futureproofindia.com/login?next=%2F
+https://docs.google.com/document/d/1_2qCv1VVYG3tysSDD6aZAPUUFu0eev_0/edit
+https://talent-intelligence-agent.vercel.app/
+https://langgraph-cheatsheet.vercel.app/
